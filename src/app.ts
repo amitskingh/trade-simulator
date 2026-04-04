@@ -1,12 +1,14 @@
-import Fastify from "fastify";
+import Fastify from 'fastify';
+
+import dbPlugin from './plugins/db.js';
 
 export const buildApp = () => {
   const app = Fastify({
     logger: true,
   });
-
-  app.get("/health", async () => {
-    return { status: "ok" };
+  app.register(dbPlugin);
+  app.get('/health', async () => {
+    return { status: 'ok' };
   });
 
   return app;
