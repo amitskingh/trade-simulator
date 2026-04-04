@@ -8,16 +8,16 @@ import {
   numeric,
   pgEnum,
   uniqueIndex,
-} from 'drizzle-orm/pg-core';
+} from "drizzle-orm/pg-core";
 
 export const baseColumns = {
-  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
 
-  updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
 
-  deletedAt: timestamp('deleted_at', { withTimezone: true }),
+  deletedAt: timestamp("deleted_at", { withTimezone: true }),
 
-  isDeleted: boolean('is_deleted').default(false).notNull(),
+  isDeleted: boolean("is_deleted").default(false).notNull(),
 };
 
 // export const orderSideEnum = pgEnum("order_side", ["BUY", "SELL"]);
@@ -30,10 +30,10 @@ export const baseColumns = {
 // ]);
 
 // USER
-export const users = pgTable('users', {
-  id: uuid('id').defaultRandom().primaryKey(),
-  email: varchar('email', { length: 255 }).unique().notNull(),
-  passwordHash: varchar('password_hash', { length: 255 }).notNull(),
+export const users = pgTable("users", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  email: varchar("email", { length: 255 }).unique().notNull(),
+  passwordHash: varchar("password_hash", { length: 255 }).notNull(),
   ...baseColumns,
 });
 
