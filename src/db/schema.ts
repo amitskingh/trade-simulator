@@ -4,10 +4,10 @@ import {
   varchar,
   timestamp,
   boolean,
-  doublePrecision,
-  numeric,
-  pgEnum,
-  uniqueIndex,
+  // doublePrecision,
+  // numeric,
+  // pgEnum,
+  // uniqueIndex,
 } from "drizzle-orm/pg-core";
 
 export const baseColumns = {
