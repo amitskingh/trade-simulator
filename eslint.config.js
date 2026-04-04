@@ -6,7 +6,9 @@ import importPlugin from "eslint-plugin-import";
 export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
-
+  {
+    ignores: ["dist/**", "node_modules/**", ".env.*", ".min.js", "build/**"],
+  },
   {
     files: ["**/*.ts"],
     languageOptions: {
